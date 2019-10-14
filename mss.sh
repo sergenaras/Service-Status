@@ -29,9 +29,9 @@ function get_colored {
 if [ -n $@ ]
 then
 	echo "Merhaba, bu betiğin çalışması için parametre olarak durumunu öğrenmek istediğiniz servislerin isimlerini girmlisiniz"
-elif [ $@ == "-s" ]
-then
-	echo "Buraya servis isimleri gelecek"
+#elif [ $@ == "-s" ]
+#then
+#	echo "Buraya servis isimleri gelecek"
 else
 then
 	## Argüman olarak verilen servislerin durumunu özet olarak verir
