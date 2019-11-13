@@ -1,0 +1,7 @@
+
+
+Listeleme kısmında birbiriyle ilişkili servisleri tek seferde okutabilmek adına bir düzenlemeye gidilebilir. 
+Örneğin Zabbix, zabbix-server httpd ve mariadb olmadan çalışmayacaktır. 
+Haliyle kullanıcı zabbix'in durumunu kontrol etmek istiyorsa bu üçünü de yazmalıdır. 
+Bu durum kullanıcıya bir paketmiş gibi sunulabilir.
+
