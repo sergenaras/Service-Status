@@ -5,15 +5,9 @@
 ## Beyaz    = '\e[1;37m'
 ## Yeşil    = '\e[1;32m'
 
-## servisin durumunu getirir
-function get_status { 
-	systemctl status $1 | grep Active: | awk -F" " '{ print $2 }' 
-}
+function get_status { systemctl status $1 | grep Active: | awk -F" " '{ print $2 }' }
 
-## servisin adını getirir
-function get_name { 
-	systemctl status $1 | head -1 | cut -c 3- | sed 's/^.*- //' 
-}
+function get_name { systemctl status $1 | head -1 | cut -c 3- | sed 's/^.*- //' }
 
 function get_colored {
 	if [ $(get_status $1) == "active" ]
@@ -29,19 +23,14 @@ function get_colored {
 if [ -n $@ ]
 then
 	echo "Merhaba, bu betiğin çalışması için parametre olarak durumunu öğrenmek istediğiniz servislerin isimlerini girmlisiniz"
-#elif [ $@ == "-s" ]
-#then
-#	echo "Buraya servis isimleri gelecek"
 else
 then
-	## Argüman olarak verilen servislerin durumunu özet olarak verir
 	for i in $@
 	do
 		printf "%s \t %s \n" "$(get_name $i) $(get_colored $i)"
 	done
 fi
 
-## Bu servisler arasında çalışmayan varsa bunlar üzerinde açma işlemi yapar
 for j in $@
 do
 	durum=$(get_status $j)
@@ -55,9 +44,3 @@ do
 		fi
 	fi
 done
-
-
-
-
-#
-#echo $(summary "httpd" "zabbix-server" "zabbix-agent" "mariadb")
