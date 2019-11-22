@@ -1,5 +1,5 @@
-# mss
-Multi Service Summary
+# ss
+Service Status
 
 This script is exists to list the services that are running and not working, to make run the ones that are not working.
 
